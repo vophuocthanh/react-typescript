@@ -51,13 +51,13 @@ a.toFixed(2); //100.00
 //   }
 // };
 
-// const product: FinalProduct = {
-//   name: "car",
-//   brand: "bmw",
-//   color: "white",
-// };
+const product: FinalProduct = {
+  name: "car",
+  brand: "bmw",
+  color: "white",
+};
 
-// function addProduct(product: FinalProduct) {
-//   //
-// }
-// addProduct(product);
+function addProduct(product: FinalProduct) {
+  //
+}
+addProduct(product);

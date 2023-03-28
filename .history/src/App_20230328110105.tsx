@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
 import { Permission } from "./utils/enum";
@@ -87,6 +87,8 @@ const travelIem: {
 // Enum
 
 function App() {
+  const [valueStr, setValueStr] = simpleUseState("thanhdev");
+  console.log("file: App.tsx:91 ~ App ~ valueStr:", valueStr);
   const [count, setCount] = useState(0);
   const user: {
     firstName: string;

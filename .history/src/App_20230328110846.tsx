@@ -87,6 +87,11 @@ const travelIem: {
 // Enum
 
 function App() {
+  const [valueStr, setValueStr] = simpleUseState("thanhdev");
+  useEffect(() => {}, []);
+  console.log("App ~ valueStr:", valueStr);
+  setValueStr("Developer");
+  console.log("App ~ valueStr:", valueStr);
   const [count, setCount] = useState(0);
   const user: {
     firstName: string;

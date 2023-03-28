@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
-import Card from "./components/Card";
 import { Permission } from "./utils/enum";
-import { simpleUseState } from "./utils/tuple";
-import { Age } from "./utils/types";
 
 // arrObj: {}[] = [{}]
 
@@ -12,14 +9,14 @@ const reviews: {
   image: string;
   stars: number;
   premiumUser: boolean;
-  date: string | number;
+  date: string;
 }[] = [
   {
     name: "Thạnh",
     image: "",
     stars: 5,
     premiumUser: true,
-    date: 99999,
+    date: "05/09/2022",
   },
   {
     name: "CharkaUI",
@@ -91,7 +88,7 @@ function App() {
   const user: {
     firstName: string;
     lastName: string;
-    age: Age;
+    age: number;
     isStudent: boolean;
     school: (string | number)[];
     scores: number[];
@@ -130,7 +127,6 @@ function App() {
           )}
           {/* {(travelIem.length, travelIem[0].name)} */}
         </div>
-        {/* <Card ></Card> */}
       </div>
     </div>
   );

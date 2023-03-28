@@ -12,14 +12,10 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }],
-  "ts-node": {
-    "esm": true
-  },
-  "lib": ["esnext"]
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

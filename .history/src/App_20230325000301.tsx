@@ -1,9 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
-import Card from "./components/Card";
-import { Permission } from "./utils/enum";
-import { simpleUseState } from "./utils/tuple";
-import { Age } from "./utils/types";
 
 // arrObj: {}[] = [{}]
 
@@ -12,14 +8,14 @@ const reviews: {
   image: string;
   stars: number;
   premiumUser: boolean;
-  date: string | number;
+  date: string;
 }[] = [
   {
     name: "Thạnh",
     image: "",
     stars: 5,
     premiumUser: true,
-    date: 99999,
+    date: "05/09/2022",
   },
   {
     name: "CharkaUI",
@@ -85,18 +81,26 @@ const travelIem: {
 ];
 
 // Enum
+enum Permission {
+  
+  
+  // permissions
+  const ADMIN = "ADMIN";
+  const EDITOR = "EDITOR";
+  const MODERATOR = "MODERATOR";
+}
 
 function App() {
   const [count, setCount] = useState(0);
   const user: {
     firstName: string;
     lastName: string;
-    age: Age;
+    age: number;
     isStudent: boolean;
     school: (string | number)[];
     scores: number[];
     contact: [number, string];
-    permission: Permission;
+    permission: string;
   } = {
     firstName: "Vo",
     lastName: "Phuoc Thanh",
@@ -105,7 +109,7 @@ function App() {
     school: ["Duy Tan", "Kien Truc HCM", "Back Khoa", 20], // union types /
     scores: [10, 9, 8, 7, 5],
     contact: [123456789, "thanhdev@gmail.com"],
-    permission: Permission.ADMIN,
+    permission: "ADMIN",
   };
   function displayReview(totalReviews: number, name: string, premium: boolean) {
     return (
@@ -130,7 +134,6 @@ function App() {
           )}
           {/* {(travelIem.length, travelIem[0].name)} */}
         </div>
-        {/* <Card ></Card> */}
       </div>
     </div>
   );

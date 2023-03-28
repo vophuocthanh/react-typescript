@@ -3,7 +3,7 @@
 //   return a + b;
 // }
 
-import { FinalProduct, Product } from "./interface";
+import { Product, ProductNewFeature } from "./interface";
 
 // total('5', '7') // 57
 export function total(a: number, b: number): number {
@@ -51,13 +51,13 @@ a.toFixed(2); //100.00
 //   }
 // };
 
-// const product: FinalProduct = {
-//   name: "car",
-//   brand: "bmw",
-//   color: "white",
-// };
+const product: Product = {
+  name: "car",
+  brand: "bmw",
+  color: "white",
+};
 
-// function addProduct(product: FinalProduct) {
-//   //
-// }
-// addProduct(product);
+function addProduct(product: Product) {
+  //
+}
+addProduct(product);

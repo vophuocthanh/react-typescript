@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
 import { Permission } from "./utils/enum";
-import { simpleUseState } from "./utils/tuple";
 import { Age } from "./utils/types";
 
 // arrObj: {}[] = [{}]

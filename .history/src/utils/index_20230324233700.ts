@@ -1,0 +1,19 @@
+// dùng để sử dụng đi sử dụng lại nhiều nơi
+// export function total(a, b) {
+//   return a + b;
+// }
+// total('5', '7') // 57
+export function total(a: number, b: number) {
+  return a + b;
+}
+total(5, 7);
+// total(5, 7);
+// type assignment
+// Tuple: nó sẽ là 1 mảng cố định các phần tử, cố định các kiểu dữ liệu trong phần tử.
+// String [] -> ['thanhdev', 'react', 'nextjs']
+// Enum
+// Any
+// Union
+// Literal
+// Function
+// Void

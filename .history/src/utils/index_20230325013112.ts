@@ -2,9 +2,6 @@
 // export function total(a, b) {
 //   return a + b;
 // }
-
-import { FinalProduct, Product } from "./interface";
-
 // total('5', '7') // 57
 export function total(a: number, b: number): number {
   return a + b;
@@ -27,37 +24,7 @@ total(5, 7);
 // unknow:
 let aNumber: unknown;
 aNumber = 100;
-if (typeof aNumber === "number") {
-  aNumber.toFixed(2);
-}
-
-let aString: unknown;
-aString = "Hello em";
-if (typeof aString === "string") {
-  const hello = aString.length;
-}
+aNumber.toFixed(2);
 const a = 100;
 a.toFixed(2); //100.00
-// never: không chứa 1 giá trị nào cả.
-// function raiseError(err: string): never {
-//   throw new Error(err);
-// }
-// function reject() {
-//   return raiseError("error");
-// }
-// let loop = function forever() {
-//   while (true) {
-//     console.log("Hello world");
-//   }
-// };
-
-// const product: FinalProduct = {
-//   name: "car",
-//   brand: "bmw",
-//   color: "white",
-// };
-
-// function addProduct(product: FinalProduct) {
-//   //
-// }
-// addProduct(product);
+// never:

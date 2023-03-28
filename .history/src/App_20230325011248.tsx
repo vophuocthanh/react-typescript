@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
-import Card from "./components/Card";
 import { Permission } from "./utils/enum";
-import { simpleUseState } from "./utils/tuple";
-import { Age } from "./utils/types";
 
 // arrObj: {}[] = [{}]
 
@@ -91,7 +88,7 @@ function App() {
   const user: {
     firstName: string;
     lastName: string;
-    age: Age;
+    age: 18 | 30 | 40;
     isStudent: boolean;
     school: (string | number)[];
     scores: number[];
@@ -100,7 +97,7 @@ function App() {
   } = {
     firstName: "Vo",
     lastName: "Phuoc Thanh",
-    age: 20,
+    age: 40,
     isStudent: true,
     school: ["Duy Tan", "Kien Truc HCM", "Back Khoa", 20], // union types /
     scores: [10, 9, 8, 7, 5],
@@ -130,7 +127,6 @@ function App() {
           )}
           {/* {(travelIem.length, travelIem[0].name)} */}
         </div>
-        {/* <Card ></Card> */}
       </div>
     </div>
   );
