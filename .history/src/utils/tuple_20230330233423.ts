@@ -18,7 +18,7 @@ export function simpleUseState(
     },
   ];
 }
-const [strGetter, strSetter] = simpleUseState("thanhdev");
-console.log(strGetter()); //thanhdev
-strSetter("Developer");
-console.log(strGetter()); //Developer
+const [valueStr, setValueStr] = simpleUseState("thanhdev");
+console.log(valueStr); //thanhdev
+setValueStr("Developer");
+console.log(valueStr); //Developer
