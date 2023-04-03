@@ -57,46 +57,12 @@ type User = Concrete<MaybeUser>;
 // };
 
 type Getters<T> = {
-  [P in keyof T as `on${Capitalize<string & P>}Change`]: (value: T[P]) => T[P];
-} & {
-  [P in keyof T as `on${Capitalize<string & P>}Focus`]?: (value: T[P]) => T[P];
+  [P in keyof T]: T[P];
 };
 interface Person {
   name: string;
   age: number;
   location: string;
 }
-type LazyPerson = Getters<Person>;
-// onNameChange: (value: string) => void
-// onAgeChange: (value: number) => void
-// onLocationChange: (value: string) => void
-// onNameFocus: (value: string) => void
-// onAgeFocus: (value: number) => void
-// onLocationFocus: (value: string) => void
 
-// Remove the 'kind' property
-// làm soa có thể xóa kind ra khỏi cái property
-type RemoveKindField<Type> = {
-  [Property in keyof Type as Exclude<Property, "kind">]: Type[Property];
-};
-interface Circle {
-  kind: "circle";
-  radius: number;
-}
-type KindlessCircle = RemoveKindField<Circle>;
-//  -----------------------------------
-type EventConfig<Events extends { kind: string }> = {
-  [E in Events as E["kind"]]: (event: E) => void;
-};
-type SquareEvent = { kind: "square"; x: number; y: number };
-type CircleEvent = { kind: "circle"; radius: number };
-type Config = EventConfig<SquareEvent | CircleEvent>;
-//  ---------------------------------------
-type ExtractPII<Type> = {
-  [Property in keyof Type]: Type[Property] extends { pii: true } ? true : false;
-};
-type DBFields = {
-  id: { format: "incrementing" };
-  name: { type: string; pii: true };
-};
-type ObjectsNeedingGDPRDeletion = ExtractPII<DBFields>;
+type LazyPerson = Getters<Person>;

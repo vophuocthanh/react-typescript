@@ -1,0 +1,15 @@
+// cách 1
+// type Developer = {
+//   name: string;
+// } & Record<string, any>;
+// cashc 2
+type Developer = {
+  name: string;
+  [key: string]: any;
+};
+const thanhdev: Developer = {
+  name: "Thanhdev developer",
+  age: 20,
+  gender: "male",
+  school: "Duy Tan",
+};
