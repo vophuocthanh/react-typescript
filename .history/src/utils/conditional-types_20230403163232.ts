@@ -54,4 +54,4 @@ type MyStudentConditional = OptionsFlags2<MyStudent>;
 type NonNullable1<T> = T extends null | undefined ? never : T;
 
 type NonNullVal = NonNullable1<null | undefined | string>;
-type UseParameters = Parameters<(a: number, b: number) => {}>;
+type UseParameters = Parameters<() => {}>;

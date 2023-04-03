@@ -40,18 +40,8 @@ type UseMyInfer2 = MyInfer<boolean>;
 type UseMyInfer3 = MyInfer<{
   age: number;
 }>;
-type OptionsFlags2<Type> = {
-  [Property in keyof Type]: Type[Property] extends () => void
-    ? Property
-    : never;
-}[keyof Type];
 interface MyStudent {
   name: string;
   age: number;
   updateName(): void;
 }
-type MyStudentConditional = OptionsFlags2<MyStudent>;
-type NonNullable1<T> = T extends null | undefined ? never : T;
-
-type NonNullVal = NonNullable1<null | undefined | string>;
-type UseParameters = Parameters<(a: number, b: number) => {}>;
