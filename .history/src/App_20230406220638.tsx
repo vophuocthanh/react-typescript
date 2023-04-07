@@ -9,7 +9,7 @@ interface Data {
   id: number;
 }
 const App = () => {
-  const { todos, onAddTodo, onRemoveTodo, inputRef } = useTodos([]);
+  const { todos, onAddTodo, onRemoveTodo } = useTodos([]);
   const [data, setData] = useState<Data | null>(null);
   useEffect(() => {
     fetch("data.json")

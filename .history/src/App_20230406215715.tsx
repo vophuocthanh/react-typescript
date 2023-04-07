@@ -1,5 +1,4 @@
 import React, { useEffect, useReducer, useRef, useState } from "react";
-import useTodos from "./hooks/useTodos";
 const Heading = ({ title }: { title: string }) => {
   return <h2 className="mb-5 text-2xl font-bold font-primary">{title}</h2>;
 };
@@ -9,7 +8,6 @@ interface Data {
   id: number;
 }
 const App = () => {
-  const { todos, onAddTodo, onRemoveTodo, inputRef } = useTodos([]);
   const [data, setData] = useState<Data | null>(null);
   useEffect(() => {
     fetch("data.json")
