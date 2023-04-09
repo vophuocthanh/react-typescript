@@ -21,47 +21,19 @@ const App = () => {
   const onClickItem = (item: string) => {
     alert(item);
   };
-  const products = [
-    {
-      id: 1,
-      title: "Iphone 14",
-      price: 1500,
-      store: "tgdd",
-    },
-  ];
   return (
     <div>
       <Heading title="Todo App"></Heading>
-      {/* {JSON.stringify(data)}
+      {JSON.stringify(data)}
       <List
         items={["javascript", "html", "css", "react"]}
         onClickItem={(item: string) => onClickItem(item)}
       ></List>
       <Boxed>
         <div>abc</div>
-      </Boxed> */}
+      </Boxed>
       <div className="max-w-sm">
-        <RenderList
-          keyExtractor={(todo) => todo.id}
-          items={todos}
-          render={(todo) => (
-            <div className="flex items-center gap-x-3" key={todo.id}>
-              <span>{todo.text}</span>
-              <button
-                onClick={() => onRemoveTodo(todo.id)}
-                className="p-2 text-sm font-medium text-white bg-red-500 rounded-lg"
-              >
-                Remove
-              </button>
-            </div>
-          )}
-        ></RenderList>
-        <RenderList
-          keyExtractor={(product) => product.id}
-          items={products}
-          render={(product) => <div>{JSON.stringify(products)}</div>}
-        ></RenderList>
-        {/* <div className="flex flex-col mb-5 gap-y-5">
+        <div className="flex flex-col mb-5 gap-y-5">
           {todos.map((todo) => (
             <div className="flex items-center gap-x-3" key={todo.id}>
               <span>{todo.text}</span>
@@ -73,7 +45,7 @@ const App = () => {
               </button>
             </div>
           ))}
-        </div> */}
+        </div>
         <div className="flex items-center gap-x-5">
           <input
             type="text"
@@ -92,23 +64,13 @@ const App = () => {
   );
 };
 
-const RenderList = <T,>({
-  items,
-  render,
-  keyExtractor,
-}: {
-  items: T[];
-  render: (item: T) => React.ReactNode;
-  keyExtractor: (item: T) => number | string;
+const renderList = ({
+  items
 }) => {
   return (
-    <ul>
-      {items.map((item, index) => (
-        <li key={keyExtractor(item)}>{render(item)}</li>
-      ))}
-    </ul>
-  );
-};
+
+  )
+}
 
 const List = ({
   items,

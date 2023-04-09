@@ -42,7 +42,6 @@ const App = () => {
       </Boxed> */}
       <div className="max-w-sm">
         <RenderList
-          keyExtractor={(todo) => todo.id}
           items={todos}
           render={(todo) => (
             <div className="flex items-center gap-x-3" key={todo.id}>
@@ -57,7 +56,6 @@ const App = () => {
           )}
         ></RenderList>
         <RenderList
-          keyExtractor={(product) => product.id}
           items={products}
           render={(product) => <div>{JSON.stringify(products)}</div>}
         ></RenderList>
@@ -74,6 +72,7 @@ const App = () => {
             </div>
           ))}
         </div> */}
+
         <div className="flex items-center gap-x-5">
           <input
             type="text"
@@ -95,18 +94,14 @@ const App = () => {
 const RenderList = <T,>({
   items,
   render,
-  keyExtractor,
 }: {
   items: T[];
   render: (item: T) => React.ReactNode;
-  keyExtractor: (item: T) => number | string;
 }) => {
   return (
-    <ul>
-      {items.map((item, index) => (
-        <li key={keyExtractor(item)}>{render(item)}</li>
-      ))}
-    </ul>
+    <div className="flex flex-col mb-5 gap-y-5">
+      {items.map((item) => render(item))}
+    </div>
   );
 };
 

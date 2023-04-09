@@ -57,7 +57,7 @@ const App = () => {
           )}
         ></RenderList>
         <RenderList
-          keyExtractor={(product) => product.id}
+          keyExtractor={(todo) => todo.price}
           items={products}
           render={(product) => <div>{JSON.stringify(products)}</div>}
         ></RenderList>
@@ -74,6 +74,7 @@ const App = () => {
             </div>
           ))}
         </div> */}
+
         <div className="flex items-center gap-x-5">
           <input
             type="text"

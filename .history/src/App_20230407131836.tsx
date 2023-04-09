@@ -21,14 +21,7 @@ const App = () => {
   const onClickItem = (item: string) => {
     alert(item);
   };
-  const products = [
-    {
-      id: 1,
-      title: "Iphone 14",
-      price: 1500,
-      store: "tgdd",
-    },
-  ];
+  const products = [];
   return (
     <div>
       <Heading title="Todo App"></Heading>
@@ -42,7 +35,6 @@ const App = () => {
       </Boxed> */}
       <div className="max-w-sm">
         <RenderList
-          keyExtractor={(todo) => todo.id}
           items={todos}
           render={(todo) => (
             <div className="flex items-center gap-x-3" key={todo.id}>
@@ -55,11 +47,6 @@ const App = () => {
               </button>
             </div>
           )}
-        ></RenderList>
-        <RenderList
-          keyExtractor={(product) => product.id}
-          items={products}
-          render={(product) => <div>{JSON.stringify(products)}</div>}
         ></RenderList>
         {/* <div className="flex flex-col mb-5 gap-y-5">
           {todos.map((todo) => (
@@ -74,6 +61,7 @@ const App = () => {
             </div>
           ))}
         </div> */}
+
         <div className="flex items-center gap-x-5">
           <input
             type="text"
@@ -95,18 +83,14 @@ const App = () => {
 const RenderList = <T,>({
   items,
   render,
-  keyExtractor,
 }: {
   items: T[];
   render: (item: T) => React.ReactNode;
-  keyExtractor: (item: T) => number | string;
 }) => {
   return (
-    <ul>
-      {items.map((item, index) => (
-        <li key={keyExtractor(item)}>{render(item)}</li>
-      ))}
-    </ul>
+    <div className="flex flex-col mb-5 gap-y-5">
+      {items.map((item) => render(item))}
+    </div>
   );
 };
 
