@@ -95,17 +95,6 @@ const App = () => {
       >
         Buy now
       </Button>
-      <Input
-        placeholder="Enter your name"
-        className="p-4 outline-none text-sm border border-slate-200 rounded-lg ml-4"
-      ></Input>
-      <View
-        as="button"
-        type="button"
-        className="capitalize text-2xl font-medium my-5"
-      >
-        This is a button
-      </View>
     </div>
   );
 };
@@ -155,26 +144,18 @@ type ButtonProps = {
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 >;
-const Button = ({ children, ...rest }: ButtonProps) => {
-  return <button {...rest}>{children}</button>;
-};
-type InputProps = React.DetailedHTMLProps<
+type InputProps = {
+  children: React.ReactNode;
+} & React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
 >;
-const Input = (rest: InputProps) => {
-  return <input {...rest}></input>;
+
+const Button = ({ children, ...rest }: ButtonProps) => {
+  return <button {...rest}>{children}</button>;
 };
-type ViewProps<T extends keyof JSX.IntrinsicElements> = {
-  children: React.ReactNode;
-  as: T;
-} & JSX.IntrinsicElements[T];
-const View = <T extends keyof JSX.IntrinsicElements>({
-  children,
-  as,
-  ...rest
-}: ViewProps<T>) => {
-  return React.createElement(as, { ...rest }, children);
+const Input = ({ ...rest }: InputProps) => {
+  return <input {...rest}></input>;
 };
 
 export default App;

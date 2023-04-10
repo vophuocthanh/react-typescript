@@ -99,11 +99,7 @@ const App = () => {
         placeholder="Enter your name"
         className="p-4 outline-none text-sm border border-slate-200 rounded-lg ml-4"
       ></Input>
-      <View
-        as="button"
-        type="button"
-        className="capitalize text-2xl font-medium my-5"
-      >
+      <View as="button" className="capitalize text-2xl font-medium my-5">
         This is a button
       </View>
     </div>
@@ -167,7 +163,7 @@ const Input = (rest: InputProps) => {
 };
 type ViewProps<T extends keyof JSX.IntrinsicElements> = {
   children: React.ReactNode;
-  as: T;
+  as: keyof T;
 } & JSX.IntrinsicElements[T];
 const View = <T extends keyof JSX.IntrinsicElements>({
   children,

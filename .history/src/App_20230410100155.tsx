@@ -99,13 +99,7 @@ const App = () => {
         placeholder="Enter your name"
         className="p-4 outline-none text-sm border border-slate-200 rounded-lg ml-4"
       ></Input>
-      <View
-        as="button"
-        type="button"
-        className="capitalize text-2xl font-medium my-5"
-      >
-        This is a button
-      </View>
+      <View as="h1">This is a placeholder</View>
     </div>
   );
 };
@@ -165,16 +159,18 @@ type InputProps = React.DetailedHTMLProps<
 const Input = (rest: InputProps) => {
   return <input {...rest}></input>;
 };
-type ViewProps<T extends keyof JSX.IntrinsicElements> = {
+type ViewProps = {
   children: React.ReactNode;
-  as: T;
-} & JSX.IntrinsicElements[T];
-const View = <T extends keyof JSX.IntrinsicElements>({
-  children,
-  as,
-  ...rest
-}: ViewProps<T>) => {
-  return React.createElement(as, { ...rest }, children);
+  as: keyof JSX.IntrinsicElements;
+};
+const View = ({ children, as, ...rest }: ViewProps) => {
+  return React.createElement(
+    as,
+    {
+      ...rest,
+    },
+    children
+  );
 };
 
 export default App;
